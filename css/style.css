@@ -1,0 +1,196 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    outline: 0;
+    box-sizing: border-box;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hover a{
+    width: 200px;
+    height: 55px;
+    border-radius: 10px;
+    background: rgb(16, 160, 189);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+.hover a::after {
+    content: '';
+    position: absolute;
+    top: -18%;
+    left: -4%;
+    width: 300px;
+    height: 69%;
+    background: #e24343;
+    z-index: -1;
+    transform: rotate(13deg);
+    visibility: hidden;
+    opacity: 0;
+    transition: all linear .5s;
+}
+.hover a:hover::after{
+    top: 35%;
+    left: -4%;
+    width: 300px;
+    height: 69%;
+    opacity: 1;
+    visibility: visible;
+
+}
+.hover a:hover{
+    animation: anim 2s linear infinite;
+}
+@keyframes anim{
+    100%{
+        background: #e24343;
+    }
+    10%{
+        background: #000000;
+    }
+    20%{
+        background: rgb(0, 0, 0);
+    }
+    30%{
+        background: #43e246;
+    }
+    40%{
+        background: #43dde2;
+    }
+    50%{
+        background: #4350e2;
+    }
+}
+
+nav ul li {
+    --c: goldenrod;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+
+nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul li:hover {
+    color: black;
+}
+
+nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
+}
+
+
+
+
+
+
+
+
+
+
+
+.hover_button{
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background: #43dde2;
+    position: relative;
+    overflow: hidden;
+}
+.hover_button a img{
+    width: 50px;
+}
+.hover_button a{
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    color: #000000;
+    top: 30%;
+    left: 6%;
+    transition: all linear .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.hover_button:hover a{
+    left: 100%;
+} 
+.hover_button::after{
+    position: absolute;
+    content: 'arif';
+    width: 0%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background: #4350e2;
+    opacity: 0;
+    transition: all linear .5s;
+}
+.hover_button:hover::after{
+    width: 100%;
+    opacity: 1;
+}
